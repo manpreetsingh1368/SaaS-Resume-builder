@@ -23,25 +23,29 @@ export default function Hero() {
       {/* Resume upload */}
       <section className="resume">
 
-        <div className="resume-option">
-          <h2>Upload your current resume</h2>
-          <p>We'll move everything to your new template.</p>
-        </div>
+  <div className="resume-option upload-option">
+    <div className="time-banner">
+      Time Saver!
+    </div>
 
-        <div className="resume-option">
-          <h2>Build a new resume</h2>
-          <p>We'll guide you through each section.</p>
-        </div>
+    <h2>Upload your current resume</h2>
+    <p>We'll move everything to your new template.</p>
+  </div>
 
-        <div className="policy">
-          <p>
-            By clicking any of the above options, you agree to our{" "}
-            <a href="#policy">Terms and Conditions</a> and{" "}
-            <a href="#privacy">Privacy Policy</a>.
-          </p>
-        </div>
+  <div className="resume-option">
+    <h2>Build a new resume</h2>
+    <p>We'll guide you through each section.</p>
+  </div>
 
-      </section>
+  <div className="policy">
+    <p>
+      By clicking any of the above options, you agree to our{" "}
+      <a href="#policy">Terms and Conditions</a> and{" "}
+      <a href="#privacy">Privacy Policy</a>.
+    </p>
+  </div>
+
+</section>
     </>
   );
 }

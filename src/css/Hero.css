@@ -75,3 +75,24 @@
 .policy a {
   color: #2563eb;
 }
+.upload-option {
+  position: relative;
+}
+
+/* Time Saver badge */
+.time-banner {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
