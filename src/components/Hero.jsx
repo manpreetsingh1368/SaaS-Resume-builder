@@ -1,4 +1,5 @@
 import "../css/Hero.css"
+import image from "../assets/hero-banner.png";
 
 export default function Hero(){
     return(
@@ -13,8 +14,7 @@ export default function Hero(){
                     <button>Create Resume</button>
                 </div>
                 <div className="hero-image">
-                    <img src="../assets/hero-banner-res-examples-desktop.png" alt="Resume Preview " 
-                    />
+                    <img src={image} alt="Hero" />
                     </div>
             </section>
 
