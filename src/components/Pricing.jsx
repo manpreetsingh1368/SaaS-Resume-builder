@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Pricing.css";
 
 export default function Pricing() {
 
   const [selectedPlan, setSelectedPlan] = useState("");
+  const navigate = useNavigate();
 
   const plans = [
     {
-      name: "Free",
-      price: "$0",
+      name: "Basic",
+      price: "$1",
       description: "Start building your resume",
       features: [
         "1 Resume",
@@ -41,21 +43,40 @@ export default function Pricing() {
     }
   ];
 
+  const handleSelectPlan = (planName) => {
+    setSelectedPlan(planName);
+
+    // redirect based on plan
+    let route = "/templates/basic";
+
+    if (planName === "Professional") {
+      route = "/templates/pro";
+    }
+
+    if (planName === "Premium") {
+      route = "/templates/premium";
+    }
+
+    // small delay so UI shows "Selected ✓"
+    setTimeout(() => {
+      navigate(route);
+    }, 300);
+  };
 
   return (
-    <section className="pricing">
+    <section id="pricing" className="pricing">
 
       <h1>Choose Your Resume Plan</h1>
+
       <p className="subtitle">
         Create professional resumes and land your dream job faster.
       </p>
-
 
       <div className="pricing-container">
 
         {plans.map((plan) => (
 
-          <div 
+          <div
             key={plan.name}
             className={`pricing-card ${
               plan.popular ? "popular" : ""
@@ -70,7 +91,6 @@ export default function Pricing() {
               </span>
             )}
 
-
             <h2>{plan.name}</h2>
 
             <h3>
@@ -78,28 +98,22 @@ export default function Pricing() {
               <span>/month</span>
             </h3>
 
-            <p>
-              {plan.description}
-            </p>
-
+            <p>{plan.description}</p>
 
             <ul>
-              {plan.features.map((feature)=>(
+              {plan.features.map((feature) => (
                 <li key={feature}>
                   ✓ {feature}
                 </li>
               ))}
             </ul>
 
-
             <button
-              onClick={() => setSelectedPlan(plan.name)}
+              onClick={() => handleSelectPlan(plan.name)}
             >
-              {
-                selectedPlan === plan.name
+              {selectedPlan === plan.name
                 ? "Selected ✓"
-                : "Choose Plan"
-              }
+                : "Choose Plan"}
             </button>
 
           </div>
@@ -108,15 +122,11 @@ export default function Pricing() {
 
       </div>
 
-
-      {
-        selectedPlan && (
-          <div className="confirmation">
-            You selected the <strong>{selectedPlan}</strong> plan.
-          </div>
-        )
-      }
-
+      {selectedPlan && (
+        <div className="confirmation">
+          You selected the <strong>{selectedPlan}</strong> plan.
+        </div>
+      )}
 
     </section>
   );

@@ -1,6 +1,6 @@
 import "../css/Hero.css";
 import image from "../assets/hero-banner.png";
-
+import {Link} from "react-router-dom";
 export default function Hero() {
   return (
     <>
