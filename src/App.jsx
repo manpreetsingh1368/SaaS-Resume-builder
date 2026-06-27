@@ -7,9 +7,9 @@ import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Templates from "./components/Templates";
 
-import BasicTemplates from "./components/templates/BasicTemplates";
-import ProfessionalTemplates from "./components/templates/ProfessionalTemplates";
-import PremiumTemplates from "./components/templates/PremiumTemplates";
+import BasicTemplates from "./templates/BasicTemplates";
+import ProfessionalTemplates from "./templates/ProfessionalTemplates";
+import PremiumTemplates from "./templates/PremiumTemplates";
 
 function App() {
   return (
